@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a, *b, **c, ***d, ****e;
+    printf("Digite um valor: ");
+    scanf("%d" , &a);
+
+    b=&a;
+    c=&b;
+    d=&c;
+    e=&d;
+
+    printf("\nA: %d" , a);
+    printf("\nB: %d" , ((*b)*2)+5);
+    printf("\nC: %d" , ((**c)*3)+7);
+    printf("\nD: %d" , ((***d)*4)+((*b)*2)+5);
+    printf("\nE: %d" , -(((***d)*4)+((*b)*2)+5));
+    return 0;
+}
