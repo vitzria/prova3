@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+   char string[50], i, *p;
+   int tam=0;
+   printf("Digite uma string: ");
+   gets(string);
+
+   p=string;
+   tam=strlen(string);
+
+    for(i=tam;i>=0;i--){
+        printf("%c", p[i]);
+    }
+    return 0;
+}
