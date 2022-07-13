@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int *p, num, i=0, i2=0, *p2, indice=0;
+
+        p=(int*)calloc(10,sizeof(int));
+        if(p==NULL){
+            printf("\nMemoria insuficiente");
+            exit(1);
+        }
+
+        do{
+            printf("\nDigite um valor ou digite 0 para sair: ");
+            scanf("%d" , &num);
+            p[indice]=num;
+                if(i2++ == 9){
+                    p2=(int*)malloc(indice+10*sizeof(int));
+                    memcpy(p2, p, indice*sizeof(int));
+                    if(p2==NULL){
+                        printf("\nMemoria insuficiente!");
+                        exit(1);
+                    }
+                    p2=p[indice];
+                    i2=0;
+            }
+            indice++;
+        }while(num!=0);
+
+        for(i=0;i<indice;i++){
+            printf("\n%d" , p[i]);
+        }
+free(p);
+free(p2);
+return 0;
+}
